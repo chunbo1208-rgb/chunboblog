@@ -2,14 +2,14 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://astro-paper.pages.dev/",
-    title: "AstroPaper",
+    url: "https://chunboblog.com",
+    title: "ChunboBlog",
     description: "A minimal, responsive and SEO-friendly Astro blog theme.",
-    author: "Sat Naing",
-    profile: "https://satna.ing",
-    ogImage: "default-og.jpg",
+    author: "Chunbo Liu",
+    profile: "undefined",
+    ogImage: "atomes.JPG",
     lang: "en",
-    timezone: "Asia/Bangkok",
+    timezone: "Asia/Shanghai",
     dir: "ltr",
   },
   posts: {
@@ -29,10 +29,12 @@ export default defineAstroPaperConfig({
     search: "pagefind",
   },
   socials: [
-    { name: "github",   url: "https://github.com/satnaing/astro-paper" },
-    { name: "x",        url: "https://x.com/username" },
-    { name: "linkedin", url: "https://www.linkedin.com/in/username/" },
-    { name: "mail",     url: "mailto:yourmail@gmail.com" },
+    { name: "github",   url: "https://github.com/chunbo1208-rgb" },
+    { name: "x",        url: "https://x.com/Chunb_liu" },
+    { name: "youtube", url: "https://www.youtube.com/@SiliRouter" },
+    { name: "bilibili", url: "https://space.bilibili.com/3546884723444099?spm_id_from=333.1007.0.0" },
+    { name: "mail",     url: "mailto:chunbo1208@gmail.com" },
+
   ],
   shareLinks: [
     { name: "whatsapp", url: "https://wa.me/?text=" },

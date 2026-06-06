@@ -2,36 +2,48 @@
 title: "About"
 description: "A bit about me and this blog."
 ---
+# About Me — Chunbo Liu
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+> *"The journey of a thousand miles begins with a single step."* — Laozi
 
-![Astro Paper](@/assets/images/astropaper-og.jpg)
+---
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+## Who I Am
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+I'm **Chunbo Liu (刘淳博)**, a 16-year-old high school student based in **Changchun, China**. 
 
-## Features
+I identify as an **INTJ**. I value depth over breadth, systems over shortcuts, and genuine understanding over surface-level performance.
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
+---
 
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
+## My Academic Background
 
-and so much more.
+- 🥈 **CMO Silver Medal** 
+---
 
-## Show your support
+## Intellectual Interests
 
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
+### Mathematics × AI
+I'm fascinated by the intersection of formal verification, LLM reasoning, and mathematical proof. My competition math background (linear algebra, proof theory) gives me an unusual entry point into this space.
 
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
+### Philosophy
+I read and think seriously about both Eastern and Western philosophy:
+- **Eastern**: Laozi, Zhuangzi — the *Tao Te Ching* and *Zhuangzi* are constant companions
+- **Western**: Plato, Kant — epistemology, ethics, metaphysics
 
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
+Philosophy isn't a side hobby for me. It's integral to how I approach problems and build frameworks for understanding the world.
 
-Kyay zuu! 🙏🏼
+### Languages
+- Native: **Mandarin Chinese**
+- Working: **English** (TOEFL preparation)
+- Self-studying: **Japanese**
+
+---
+
+## Athletics
+
+- Basketball
+- Soccer
+---
+
+## My Philosophy of life
