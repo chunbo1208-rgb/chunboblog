@@ -103,6 +103,11 @@
   html[data-theme="dark"] .astro-code {
     @apply bg-(--shiki-dark-bg) text-(--shiki-dark) [&_span]:text-(--shiki-dark);
   }
+  /* Katex text color */
+  /* [!code highlight:3] */
+  .prose .katex-display {
+    @apply text-foreground;
+  }
 
   /* Styles for Shiki transformers */
   /* https://shiki.style/packages/transformers */
