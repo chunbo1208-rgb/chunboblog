@@ -14,11 +14,13 @@ I'm **Chunbo Liu (刘淳博)**, a 16-year-old high school student based in **Cha
 
 I identify as an **INTJ**. I value depth over breadth, systems over shortcuts, and genuine understanding over surface-level performance.
 
+I have many ideas to achieve, some of them attract me a lot, some of them have much potential which I am willing to dream with.
+
 ---
 
 ## My Academic Background
 
-- 🥈 **CMO Silver Medal** 
+- 🥈 **2025 CMO Silver Medal** 
 ---
 
 ## Intellectual Interests
@@ -38,12 +40,11 @@ Philosophy isn't a side hobby for me. It's integral to how I approach problems a
 - Working: **English** (TOEFL preparation)
 - Self-studying: **Japanese**
 
----
 
-## Athletics
-
-- Basketball
-- Soccer
 ---
 
 ## My Philosophy of life
+
+Actually, being a person who only pushed by impossible interests easily felt confused and desperate. I can't be accepted by classmates around me, my ideas are always seen as a domb. 
+
+So how to keep my own pace is such an important proposal for me. 

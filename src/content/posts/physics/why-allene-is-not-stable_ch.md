@@ -9,8 +9,6 @@ tags:
 - organic chemistry
 ---
 
-英文版：[Why allene is not stable?](/posts/physics/why-allene-is-not-stable/)
-
 这篇文章，我打算从“我感兴趣”的方式，解释为什么联烯(Allene) 不稳定。
 
 联烯，就是在有机分子中一个碳原子连接两个双键。最简单的，可以写成这个形式。
