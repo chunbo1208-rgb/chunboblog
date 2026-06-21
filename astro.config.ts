@@ -21,6 +21,57 @@ import config from "./astro-paper.config";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
+function remarkDoubleDollarBlock() {
+  return (tree: any, file: any) => {
+    const visit = (
+      node: any,
+      type: string,
+      callback: any,
+      parent: any = null
+    ) => {
+      if (node.type === type) {
+        callback(node, parent);
+      }
+      if (node.children) {
+        for (let i = 0; i < node.children.length; i++) {
+          visit(node.children[i], type, callback, node);
+        }
+      }
+    };
+
+    visit(tree, "inlineMath", (node: any, parent: any) => {
+      if (node.position && file.value) {
+        const rawText = (file.value as string).slice(
+          node.position.start.offset,
+          node.position.end.offset
+        );
+        if (rawText.startsWith("$$") && rawText.endsWith("$$")) {
+          node.type = "math";
+          node.data = {
+            hName: "div",
+            hProperties: {
+              className: ["math", "math-display"],
+            },
+            hChildren: [
+              {
+                type: "text",
+                value: node.value,
+              },
+            ],
+          };
+
+          if (parent && parent.type === "paragraph" && parent.children.length === 1) {
+            parent.type = "math";
+            parent.value = node.value;
+            parent.data = node.data;
+            parent.children = [];
+          }
+        }
+      }
+    });
+  };
+}
+
 export default defineConfig({
   site: config.site.url,
   integrations: [
@@ -41,6 +92,7 @@ export default defineConfig({
     processor: unified({
       remarkPlugins: [
         remarkMath,
+        remarkDoubleDollarBlock,
         remarkToc,
         [remarkCollapse, { test: "Table of contents" }],
       ],
