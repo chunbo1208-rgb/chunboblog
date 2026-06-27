@@ -37,4 +37,17 @@ const pages = defineCollection({
   }),
 });
 
-export const collections = { posts, pages };
+const columns = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/columns" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDatetime: z.date(),
+    modDatetime: z.date().optional().nullable(),
+    subject: z.string(),
+    tags: z.array(z.string()).default(["others"]),
+  }),
+});
+
+
+export const collections = { posts, pages, columns };
