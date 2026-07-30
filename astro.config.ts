@@ -8,6 +8,7 @@ import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { unified } from "@astrojs/markdown-remark";
+import remarkBreaks from "remark-breaks";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import rehypeCallouts from "rehype-callouts";
@@ -60,7 +61,11 @@ function remarkDoubleDollarBlock() {
             ],
           };
 
-          if (parent && parent.type === "paragraph" && parent.children.length === 1) {
+          if (
+            parent &&
+            parent.type === "paragraph" &&
+            parent.children.length === 1
+          ) {
             parent.type = "math";
             parent.value = node.value;
             parent.data = node.data;
@@ -93,10 +98,11 @@ export default defineConfig({
       remarkPlugins: [
         remarkMath,
         remarkDoubleDollarBlock,
+        remarkBreaks,
         remarkToc,
         [remarkCollapse, { test: "Table of contents" }],
       ],
-      rehypePlugins: [rehypeCallouts, rehypeKatex], 
+      rehypePlugins: [rehypeCallouts, rehypeKatex],
     }),
     shikiConfig: {
       themes: { light: "min-light", dark: "night-owl" },

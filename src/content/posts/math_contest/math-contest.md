@@ -3,11 +3,13 @@ author: Chunbo Liu
 title: Math Contest Retake
 description: This is the first time I retake up my math contest career, I really want to say my experiences here.
 pubDatetime: 2026-07-12T12:39:11.152Z
-modDatetime: 2026-07-12T12:39:11.152Z
+modDatetime: 2026-07-30T13:36:05.981Z
 tags: 
 - math contest
 - experiences
 ---
+
+## Table of Contents
 
 Previously, the last cycle of my math contest learning, I reached to the height of CMO silver medal, which I thought really not the top of myself, so I retook now after a long time of confusing and discovering.
 
@@ -65,6 +67,7 @@ No matter what happens, just follow what I am really keen on.
 	3. We talk about the existence of $b_1$ and $b_n$
 	
 5. Prove that for any positive integer $N$, there exists positive integers a, b such that $b>a>N$, such that 
+
  $a-1\mid b-1$ and for all positive integer n: $a^n-1\not \mid b^n-1$.
 	 Inspire from this problem:
 		 prove that if $m,n$ are odd numbers, then $2^m-1\not\mid 3^n-1$.

@@ -92,6 +92,7 @@
 
     pre {
       @apply focus-visible:outline-accent focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed;
+      tab-size: 4;
     }
   }
 
