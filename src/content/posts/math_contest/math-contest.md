@@ -8,19 +8,6 @@ tags:
 - math contest
 - experiences
 ---
-
-## Table of Contents
-
-Previously, the last cycle of my math contest learning, I reached to the height of CMO silver medal, which I thought really not the top of myself, so I retook now after a long time of confusing and discovering.
-
-So to start with, I can't directly start intensively thinking work, so I decide to start little by little, read previously articles and problems.
-
-Actually, I find I have a disadvantage that I can't memorize problems that I have already solved. For example, some classmates around me can directly reveal that this problem has been shown somewhere. Or maybe that is just I didn't reach the level.
-
-But actually, my final interests is not on Math Contest, it is actually on pure math. I know that they are not contradicts, but actually not intersects. However, there are still many problems come from the idea of advanced problems and knowledge. So I will try to discover this interesting part.
-
-No matter what happens, just follow what I am really keen on.
-
 # 0730 Fu Yun hao
 ## 综合练习1
 ### Problem 1
@@ -143,7 +130,110 @@ This can be proved by Ptolemy's Theorem, but can also be completed by 3D Inversi
 A test paper consists of $n$ true-or-false questions, where the answers are only True or False. The hardworking Xiaoming does not know how to solve any of the questions, so he decides to submit $m$ fully completed answer sheets that he prepared beforehand to the teacher at the same time. After grading every answer sheet, the teacher informs Xiaoming of the total score of each valid answer sheet (1 point for each correct question, 0 points for an incorrect question), but does not tell him which specific questions were answered correctly. Incomplete answer sheets (i.e., answer sheets with answers to fewer than $n$ questions) are considered invalid answer sheets and are not graded. Xiaoming can design the answers for each answer sheet in advance so that, regardless of the circumstances, he can deduce the correct answer to every question based on the score of each answer sheet.
 
 Xiaoming can minimize $m$ through carefully designed answer sheets. Let this minimum $m$ be denoted as $f(n)$. **Prove:** There exist positive real numbers $c_1, c_2$ such that for any integer $n > 1$,
-$$c_1 \frac{n}{\ln n} \le f(n) \le c_2 \frac{n}{\ln n}.$$
+
+$$
+c_1 \frac{n}{\ln n} \le f(n) \le c_2 \frac{n}{\ln n}.
+$$
+
+**Ideas**:
+**Lower Bound**
+The answer has $2^n$ types
+Actually, we can so some basic setups here. That the feedback has 0,1,..., n, totally n+1 kinds. so we know that $(n+1)^m\ge2^n$ it means that Xiaoming need to make enough answer sheets to definitely cover all kinds of answer properties. To be more exact: left hand side means that hand in m papers, there are at most $(n+1)^m$ kinds of feedback, so if m papers are enough to guess the whole answer, so much situations must cover all kinds of answers. So We can derive that
+
+$$
+m\ln (n+1)\ge n\ln 2\Rightarrow m> \frac{\ln2}{2}\frac{n}{\ln n}.
+$$
+
+**Upper Bound**
+We need to find an upper bound, which means we need to design a strategy for Xiaoming to help him finally guess the problems.
+
+We'll do some basic transformation of this problem to an algebra one.
+The Check system can be turned into an inner product. So define $S=\{1,-1\}^n$ the answer $\vec \alpha\in S$, and every paper $\vec\lambda_i\in S$ So the feedback can be written as
+
+$$
+f(\lambda_i)=\frac{n+\lambda_i\cdot\alpha}{2}.
+$$
+
+Then, the question has transformed to this:
+> Find the least m where $\#L=m,L\subset S$ We can construct such $L$ so that $\forall \vec\alpha\in S$, $\exists \vec\lambda \in L$ such that $f(\lambda)=n$. 
+
+To write it in a more convenient way, we will describe in linear algebra like this: We construct a matrix $A_{m\times n}$, that contains each kind of Xiaomings trial paper work. And the feedback set will be $A\vec x$ so if $\forall \vec x\not=\vec y$ and $Ax\not = Ay$ then Xiaoming can really find out the answer here. 
+
+The logic is here: the equation is $Ax=b$, teacher gives xiaoming b, What xiaoming doing is to decode $x$. But Xiaoming can design a fixed A, and if we can make sure that $\ker A\cap \{1,0,-1\}^n-0=\emptyset$, then for any $\#\{x|Ax=b\}\le 1$, because $A(x-y)\not =0$ if $x\not = y$. Moreover, $x-y = \{1,0,-1\}^n$
+
+This part quite stuck me for a long while, but after understanding the logic words, I can finally understand it.
+
+So the problem turned to:
+> $M(n)=\min\left\{m:\exists A\in\{-1,1\}^{m\times n} \text{ such that } \ker A\cap\bigl(\{-1,0,1\}^n\setminus\{0\}\bigr)=\varnothing \right\}$ 
+ We want an upper bound for $M(n)\le c\frac{n}{\ln n}$
+
+Fix a nonzero vector $d\in\{-1,0,1\}^n$, and let \(k\) be the number of its nonzero coordinates.
+
+For one random row $r$ of  $A$. 
+$r\cdot d$ is the sum of $k$ independent random signs. Therefore (Which is we choose k numbers in {1,-1}, and a random row in A did so) To add: $k\le n$ because there may have 0 element in $x$.  
+
+$$
+\Pr(r\cdot d=0)=
+\begin{cases}  
+0,&k\text{ odd},\\ 
+\dfrac{\binom{k}{k/2}}{2^k},&k\text{ even}.  
+\end{cases}  
+$$
+
+To explain more: The whole sample space have $2^m$ in total, and we choose $k$ 1s, so there are $\binom{k}{k/2}$ possibilities to make the inner product 0.
+
+Using the standard central-binomial estimate,
+
+$$
+\frac{\binom{k}{k/2}}{2^k}\approx\frac1{\sqrt{k}}.
+$$
+
+(By Using Stirling’s formula, $r!\sim \sqrt{2\pi r}\left(\frac re\right)^r$)
+
+So
+
+$$
+\frac{\binom{k}{k/2}}{2^k}\le\frac M{\sqrt{k}}.
+$$
+
+The $m$ rows are independent, so
+
+$$
+\Pr(Ad=0)\le \left(\frac M{\sqrt{k}}\right)^m.
+$$
+
+Because there are $\binom nk2^k$ such $x$ with a fixed $k$, the total probability is
+
+$$
+\Pr\bigl(\exists\,0\ne x\in\{-1,0,1\}^n:Ad=0\bigr) \le \sum_{k=1}^n \binom nk2^k\,\Pr(Ad=0).
+$$
+
+Split $k$ into
+
+- small supports $k\le n/(\ln n)^2$;
+- large supports $k>n/(\ln n)^2$
+
+And the logic is like when if we set $m\le c\frac{n}{\ln n}$ we can always construct such A
+
+#### For small \(k\), we use the simpler bound  
+$\Pr(r\cdot d=0)\le\frac12\Rightarrow\Pr(Ad=0)\le 2^{-m}$
+The number of such vectors is at most  
+
+$$
+\sum_{k\le n/(\ln n)^2}\binom nk2^k  \le  \exp\left((1+o(1))\frac n{\ln n}\right).
+$$
+
+How to Prove? I am so dumb!!!!! just $\binom nk\le n^k$
+
+So then
+
+$$
+\sum_{k=1}^{n/(\ln n)^2} \binom nk2^k\,\Pr(Ax=0)\le c e^{n/\ln n}\cdot 2^{-m}\Rightarrow m\le c\frac{n}{\ln n}.
+$$
+
+#### For large \(k\),  $k>\frac n{(\ln n)^2}$,  
+
+$\Pr(Ad=0)  \le  \left(M\frac{\ln n}{\sqrt n}\right)^m$.  
 
 ### Problem 8 
 Let $n$ be a positive integer. A circle $\Gamma$ has $n$ inscribed triangles whose vertices are all distinct. **Prove:** It is possible to select $2n$ vertices from these $3n$ vertices, and then have $n$ boys and $n$ girls stand at these chosen vertices, such that:
@@ -154,6 +244,16 @@ Let $n$ be a positive integer. A circle $\Gamma$ has $n$ inscribed triangles who
 
 
 ## 综合练习四
+
+
+### Problem 1
+Given a positive integer $n$, find the maximum integer $m$ satisfying the following condition:  
+There exists an irrational number $\alpha$, pairwise distinct rational numbers $a_1, a_2, \dots, a_m$, and a degree-$n$ polynomial $f(x)$ with rational coefficients such that $f(\alpha + a_i)$ is rational for all $i = 1, 2, \dots, m$.
+
+### Problem 3
+Starting from a triplet of non-negative integers $(a, b, c)$, the following operation is allowed: select two numbers from the triplet, let them be $x$ and $y$, and change one of them to $x + y$ or $|x - y|$. For example: $(3, 5, 7) \rightarrow (3, 5, 4)$ is considered a single operation. 
+
+**Prove:** There exists a constant $r > 0$ such that for any positive integers $a, b, c, n$, if $a, b, c$ are all less than $2^n$, then one can perform no more than $rn$ operations on $(a, b, c)$ to make one of the numbers in the triplet equal to $0$.
 ### Problem 5
 Let integer $n \ge 2$. Let $S_1, S_2, \dots, S_{2^n}$ be $2^n$ subsets of the set $A = \{1, 2, 3, \dots, 2^{n+1}\}$ satisfying the following condition: there do not exist indices $a < b$ and three elements $x, y, z \in A$ such that $x < y < z$, where $x, z \in S_a$ and $y, z \in S_b$. 
 
@@ -171,3 +271,45 @@ $$O = \sum_{T \subseteq S, |T|=2k+1} |\sigma(T)|, \quad E = \sum_{T \subseteq S,
 **Prove:**
 
 $$\frac{1012}{1013} \le \frac{E}{O} \le \frac{1013}{1012}.$$
+
+# 0801 HLB
+### Idea 1
+I found a quite interesting problem to think about: can we really compute the area or border length cut from a random plane to a regular tetrahedron. 
+
+Or to be reverse, can we determine a plane's direction and position by knowing its cutting plane's border length and area on a regular tetrahedron. 
+
+### 2
+Why 2 inversions, which based circles are orthogonal, then the inversion of each is commutitive.
+
+While this can be proved by a basic Miquel point theorem.
+If you have any other better solutions, contact me!!!!
+
+When I am proving, this geometry problem attracts me:
+> $\triangle ABC$, $D\in AB, E\in AC$, $\odot ADE$ touches $BE$ at $F$, and $CD$ at $G$. $\odot BDG\cap\odot CDF = H$, Is there any relations between $FG$ and $d(H,BC)$?   
+
+![Geometry diagram](./Screenshot%202026-08-01%20at%2010.05.55%20PM.png)
+
+### 3 From problem 6:
+A number of great circles are drawn on the surface of a sphere, dividing the spherical surface into a number of triangular regions and quadrilateral regions. It is known that no three great circles pass through the same point, and there is at least one quadrilateral region. Prove that there are exactly 8 triangular regions and 6 quadrilateral regions.
+
+
+### 4 From Problem 12:
+suppose that prime number $p\equiv 1\pmod 9$, prove that there exists a positive integer n such that $p\mid n^3-3n+1$.
+
+The first part is to deal with this 3 power. 
+The typical thing of solving a 3-power equation:
+> $x^3-3Px-Q=0$, we'll let $x=a+b$, then $x^3=a^3+b^3+3ab(a+b)$, so we let $P=ab,Q=a^3+b^3$.
+
+Back to the problem, it turns to $\mathbb{Z}_p$, and $ab=1$, so b is the reverse of a, $a^3+b^3=-1$, so this turns to $a^6+a^3+1=0\Leftarrow a^9=1$, then by Fermat's Little Theorem, this is proved. This is somewhere the typical solution.
+
+But I use a technique where SQ(a teacher lol) used before: $a^2+a+1=0$ where $\Delta=1-4=-3$, this shows that we need $(\frac{-3}{p})=1$, and the condition is right.
+
+At the first time, I haven't seen something weird, just yes it is...
+But as I recheck this, it seems that the condition of $(\frac{-3}{p})=1$ just need $3\mid p-1$, but as I tried $p=7$, I finally found something weird: we need the term $a^3$.
+
+So to make it clearer, we let $m=\sqrt{-3}$, then what we need is to claim that there exist a, such that $a^3=\frac{m+1}2$ or $\frac{m-1}2$ then finished.
+
+But how????
+For \(m=3\), this gives:
+
+$$\begin{array}{c|c|c} p & \text{solvability of }a^3=k & \text{number of roots}\\ \hline p\equiv2\pmod3 & \text{always solvable} & 1\\ p\equiv1\pmod3 & k^{(p-1)/3}=1 & 3\\ p=3 & \text{always solvable} & 1 \end{array}$$
