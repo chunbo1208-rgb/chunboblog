@@ -6,9 +6,12 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "node scripts/sync-math-contest.mjs --dev",
+    "prebuild": "node scripts/sync-math-contest.mjs",
     "build": "astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
     "preview": "astro preview",
+    "sync:math-contest": "node scripts/sync-math-contest.mjs",
+    "sync:math-contest:watch": "node scripts/sync-math-contest.mjs --watch",
     "sync": "astro sync",
     "astro": "astro",
     "format:check": "prettier --check .",

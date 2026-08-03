@@ -20,6 +20,11 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# local content synchronization state
+.math-contest-sync.json
+.math-contest-sync-base.md
+.math-contest-sync-backup/
+
 # jetbrains setting folder
 .idea/
 
