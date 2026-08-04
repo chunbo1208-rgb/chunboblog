@@ -8,7 +8,8 @@ tags:
 - math contest
 - experiences
 ---
-# 0730 Fu Yun hao
+## Table of Contents
+# 0730 FYH
 ## 综合练习1
 ### Problem 1
 Suppose that $\{x_n\}$ is a positive real number sequence, prove that: there exist infinitely many positive integers $n$ such that $$x_1+\cdots +x_{n+1}\ge 3.99 x_n$$
@@ -106,7 +107,7 @@ $$Lf=0\Rightarrow -LDf=(n-2k)f\Rightarrow\langle -LDf,f\rangle=(n-2k)\langle f,f
 ### Problem 8
 Find all function $f:\mathbb{R}\to\mathbb{R}$, so that $\forall x,y$, we all have $$f([f(x)+f(y)]^2)=(x+y)(f(x)+f(y))$$
 
-# 0731 Fu Yun Hao
+# 0731 FYH
 ## 综合练习三
 
 ### Problem 3
@@ -163,16 +164,22 @@ $$
 
 For one random row $r$ of  $A$. 
 $r\cdot d$ is the sum of $k$ independent random signs. Therefore (Which is we choose k numbers in {1,-1}, and a random row in A did so) To add: $k\le n$ because there may have 0 element in $x$.  
-$$\Pr(r\cdot d=0)=
+$$
+\Pr(r\cdot d=0)=
 
 \begin{cases}  
 0,&k\text{ odd},\\ 
 \dfrac{\binom{k}{k/2}}{2^k},&k\text{ even}.  
 \end{cases}  
-$$To explain more: The whole sample space have $2^m$ in total, and we choose $k$ 1s, so there are $\binom{k}{k/2}$ possibilities to make the inner product 0.
+$$
+
+To explain more: The whole sample space have $2^m$ in total, and we choose $k$ 1s, so there are $\binom{k}{k/2}$ possibilities to make the inner product 0.
 
 Using the standard central-binomial estimate,
-$$\frac{\binom{k}{k/2}}{2^k}\approx\frac1{\sqrt{k}}$$
+
+$$
+\frac{\binom{k}{k/2}}{2^k}\approx\frac1{\sqrt{k}}
+$$
 
 (By Using Stirling’s formula, $r!\sim \sqrt{2\pi r}\left(\frac re\right)^r$)
 
@@ -198,9 +205,18 @@ And the logic is like when if we set $m\le c\frac{n}{\ln n}$ we can always const
 #### For small \(k\), we use the simpler bound  
 $\Pr(r\cdot d=0)\le\frac12\Rightarrow\Pr(Ad=0)\le 2^{-m}$
 The number of such vectors is at most  
-$$\sum_{k\le n/(\ln n)^2}\binom nk2^k  \le  \exp\left((1+o(1))\frac n{\ln n}\right)$$
+
+$$
+\sum_{k\le n/(\ln n)^2}\binom nk2^k  \le  \exp\left((1+o(1))\frac n{\ln n}\right)
+$$
+
 How to Prove? I am so dumb!!!!! just $\binom nk\le n^k$
-So then $$\sum_{k=1}^{n/(\ln n)^2} \binom nk2^k\,\Pr(Ax=0)\le c e^{n/\ln n}\cdot 2^{-m}\Rightarrow m\le c\frac{n}{\ln n} $$
+
+So then
+
+$$
+\sum_{k=1}^{n/(\ln n)^2} \binom nk2^k\,\Pr(Ax=0)\le c e^{n/\ln n}\cdot 2^{-m}\Rightarrow m\le c\frac{n}{\ln n}
+$$
 #### For large \(k\),  $k>\frac n{(\ln n)^2}$,  
 
 $$
@@ -209,21 +225,43 @@ $$
 
 How to Prove? just $\binom nk\le n^k$
 
-$$\sum_{k=1}^{\lfloor n/(\ln n)^2\rfloor}\binom nk2^k \le \sum_{k=1}^{\lfloor n/(\ln n)^2\rfloor}(2n)^k <(2n)^{n/(\ln n)^2}\ce{->[(n big)]}\exp\left( \ln 2n\cdot \frac{n}{(\ln n)^2} \right)=\exp\left((1+o(1))\frac n{\ln n}\right)$$
+$$
+\sum_{k=1}^{\lfloor n/(\ln n)^2\rfloor}\binom nk2^k \le \sum_{k=1}^{\lfloor n/(\ln n)^2\rfloor}(2n)^k <(2n)^{n/(\ln n)^2}\xrightarrow{n\text{ big}}\exp\left( \ln 2n\cdot \frac{n}{(\ln n)^2} \right)=\exp\left((1+o(1))\frac n{\ln n}\right)
+$$
 
 
 Thus, for sufficiently large \(n\),
 
 $$
-\sum_{k=1}^{\lfloor n/(\ln n)^2\rfloor} \binom nk2^k\,\Pr(Ax=0)\le c e^{n/\ln n}\cdot 2^{-m}=\exp\left((1+o(1))\frac n{\ln n}-m\cdot \ln2 \right)$$
-Later we choose $m=C\frac{n}{\ln n}$, then $$\exp\left((1+o(1))\frac n{\ln n}-m\cdot \ln2 \right)=\exp\left((1+o(1)-C)\frac n{\ln n}\right)$$
+\sum_{k=1}^{\lfloor n/(\ln n)^2\rfloor} \binom nk2^k\,\Pr(Ax=0)\le c e^{n/\ln n}\cdot 2^{-m}=\exp\left((1+o(1))\frac n{\ln n}-m\cdot \ln2 \right)
+$$
+
+Later we choose $m=C\frac{n}{\ln n}$, then
+
+$$
+\exp\left((1+o(1))\frac n{\ln n}-m\cdot \ln2 \right)=\exp\left((1+o(1)-C)\frac n{\ln n}\right)
+$$
+
 So as we let $C=2$, we can get $\Pr_{\text{k small}}\to 0$ as $n$ grow.
 #### For large \(k\),  $k>\frac n{(\ln n)^2}$,  
 
-$\Pr(Ad=0)  \le  \left(\frac{\ln n}{\sqrt n}\right)^m$.  
-So $$\Pr_{\text{k big}}\bigl(\exists\,0\ne x\in\{-1,0,1\}^n:Ad=0\bigr) \le \sum_{k=\lfloor n/(\ln n)^2\rfloor+1}^n \binom nk2^k\,\Pr(Ad=0)\le \left(\frac{\ln n}{\sqrt n}\right)^m\cdot 3^n $$
+$$
+\Pr(Ad=0)  \le  \left(\frac{\ln n}{\sqrt n}\right)^m.
+$$
+
+So
+
+$$
+\Pr_{\text{k big}}\bigl(\exists\,0\ne x\in\{-1,0,1\}^n:Ad=0\bigr) \le \sum_{k=\lfloor n/(\ln n)^2\rfloor+1}^n \binom nk2^k\,\Pr(Ad=0)\le \left(\frac{\ln n}{\sqrt n}\right)^m\cdot 3^n
+$$
+
 We choose $m=C\frac{n}{\ln n}$ 
-Then $$\left(\frac{\ln n}{\sqrt n}\right)^m\cdot 3^n=\exp\left(C\frac{n}{\ln n}\cdot (\ln\ln n-\frac12 \ln n)+n\ln 3\right)=\exp\left( (C\frac{\ln\ln n}{\ln n}-\frac C2+\ln 3 )n\right)$$
+
+Then
+
+$$
+\left(\frac{\ln n}{\sqrt n}\right)^m\cdot 3^n=\exp\left(C\frac{n}{\ln n}\cdot (\ln\ln n-\frac12 \ln n)+n\ln 3\right)=\exp\left( (C\frac{\ln\ln n}{\ln n}-\frac C2+\ln 3 )n\right)
+$$
 
 As n grow larger, we know that $\frac{\ln\ln n}{\ln n}\to 0$, so we just need to let $C=10000000000000$ lol, then $-\frac{C}2+\ln 3<0$ So $\Pr_{\text{k large}}\to 0$
 

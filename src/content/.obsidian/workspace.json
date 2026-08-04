@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "110ac1836a35ded7",
+            "id": "0613b091780a0522",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/math_contest/math-contest.md",
+                "file": "posts/math_contest/titu-number-theory.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "math-contest"
+              "title": "titu-number-theory"
             }
           }
         ]
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/math_contest/math-contest.md",
+                "file": "posts/math_contest/titu-number-theory.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "posts/math_contest/math-contest.md",
+                "file": "posts/math_contest/titu-number-theory.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "posts/math_contest/math-contest.md",
+                "file": "posts/math_contest/titu-number-theory.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -188,8 +188,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "110ac1836a35ded7",
+  "active": "0613b091780a0522",
   "lastOpenFiles": [
+    "posts/math_contest/introductory-combinatorics.md",
+    "posts/math_contest/math-contest.md",
+    "posts/math_contest/titu-number-theory.md",
+    "titu-number-theory.md",
+    "posts/physics/why-allene-is-not-stable_ch.md",
+    "posts/launchings/gaokaozhuanlan.md",
     "posts/math_contest/Screenshot 2026-08-01 at 10.05.55 PM.png",
     "Screenshot 2026-08-01 at 10.05.55 PM.png"
   ]

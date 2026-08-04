@@ -104,9 +104,9 @@
   html[data-theme="dark"] .astro-code {
     @apply bg-(--shiki-dark-bg) text-(--shiki-dark) [&_span]:text-(--shiki-dark);
   }
-  /* Katex text color */
-  /* [!code highlight:3] */
-  .prose .katex-display {
+  /* Tailwind Typography colors nested spans, so reset the full KaTeX tree. */
+  .app-prose .katex,
+  .app-prose .katex * {
     @apply text-foreground;
   }
 
