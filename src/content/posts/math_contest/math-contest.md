@@ -8,7 +8,6 @@ tags:
 - math contest
 - experiences
 ---
-## Table of Contents
 # 0730 FYH
 ## 综合练习1
 ### Problem 1
@@ -967,3 +966,6 @@ The central hidden idea is therefore:
 
 This problem really make me stuck at the very first step: how to use that AD:bisector of $∠𝐵𝐴𝐶$.
 While the problem construct a $F$, so that $ABFC$ are concyclic, and $FB=FC$
+
+
+# 0805

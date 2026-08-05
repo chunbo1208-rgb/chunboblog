@@ -14,6 +14,7 @@ import ShareLinks from "./_components/ShareLinks.astro";
 import BackButton from "./_components/BackButton.astro";
 import BackToTopButton from "./_components/BackToTopButton.astro";
 import AdjacentPostNav from "./_components/AdjacentPostNav.astro";
+import PostDateCalendar from "@/components/PostDateCalendar.astro";
 import config from "@/config";
 
 export async function getStaticPaths() {
@@ -71,7 +72,25 @@ const {
   hideEditPost,
 } = post.data;
 
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+const isMathContestJournal = post.filePath?.endsWith(
+  "src/content/posts/math_contest/math-contest.md"
+);
+const journalDates = isMathContestJournal
+  ? headings.flatMap(heading => {
+      if (heading.depth !== 1) return [];
+      const match = heading.text.match(/^(\d{2})(\d{2})(?:\s+(.+))?$/);
+      if (!match) return [];
+      const [, month, day, label] = match;
+      return [
+        {
+          date: `${pubDatetime.getUTCFullYear()}-${month}-${day}`,
+          heading: label ?? "Study notes",
+          id: heading.slug,
+        },
+      ];
+    })
+  : [];
 
 let ogImageUrl: string | undefined;
 
@@ -132,8 +151,11 @@ const ogImage = ogImageUrl
       <EditPost {hideEditPost} {post} class="max-sm:hidden" />
     </div>
 
+    {journalDates.length > 0 && <PostDateCalendar entries={journalDates} />}
+
     <article
       id="article"
+      data-date-guided={journalDates.length > 0 ? "true" : undefined}
       class:list={[
         "mt-8 w-full",
         "app-prose max-w-app",
@@ -163,6 +185,21 @@ const ogImage = ogImageUrl
 </PostLayout>
 
 <script is:inline data-astro-rerun>
+  function removeLinearTableOfContents() {
+    const article = document.querySelector('#article[data-date-guided="true"]');
+    const tocHeading = article?.querySelector("#table-of-contents");
+    if (!tocHeading) return;
+
+    let nextElement = tocHeading.nextElementSibling;
+    while (nextElement && nextElement.tagName !== "H1") {
+      const elementToRemove = nextElement;
+      nextElement = nextElement.nextElementSibling;
+      elementToRemove.remove();
+    }
+    tocHeading.remove();
+  }
+  removeLinearTableOfContents();
+
   function createProgressBar() {
     const progressContainer = document.createElement("div");
     progressContainer.className =
@@ -197,7 +234,9 @@ const ogImage = ogImageUrl
 
   function addHeadingLinks() {
     const headings = Array.from(
-      document.querySelectorAll("h2, h3, h4, h5, h6")
+      document.querySelectorAll(
+        "#article h2, #article h3, #article h4, #article h5, #article h6"
+      )
     );
     for (const heading of headings) {
       heading.classList.add("group");

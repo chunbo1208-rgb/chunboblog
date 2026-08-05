@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import config from "@/config";
+
+type Props = {
+  papers: CollectionEntry<"columns">[];
+};
+
+const { papers } = Astro.props;
+const locale = Astro.currentLocale ?? config.site.lang;
+const getPaperUrl = (paper: CollectionEntry<"columns">) =>
+  getRelativeLocaleUrl(locale, `columns/${paper.id.replace(/\/index$/, "")}`);
+---
+
+<ul class="divide-border divide-y border-y">
+  {
+    papers.map(paper => (
+      <li class="py-4">
+        <a
+          class="text-accent text-lg font-semibold decoration-dashed underline-offset-4 hover:underline"
+          href={getPaperUrl(paper)}
+        >
+          {paper.data.title}
+        </a>
+        <p class="text-muted-foreground mt-1 text-sm">
+          {paper.data.description}
+        </p>
+      </li>
+    ))
+  }
+</ul>

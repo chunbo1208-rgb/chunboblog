@@ -1,0 +1,162 @@
+---
+type DateEntry = {
+  date: string;
+  heading: string;
+  id: string;
+};
+
+type Props = {
+  entries: DateEntry[];
+};
+
+const { entries } = Astro.props;
+const monthFormatter = new Intl.DateTimeFormat("en", {
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC",
+});
+const weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const byMonth = new Map<string, DateEntry[]>();
+
+for (const entry of entries) {
+  const month = entry.date.slice(0, 7);
+  if (!byMonth.has(month)) byMonth.set(month, []);
+  byMonth.get(month)?.push(entry);
+}
+
+const months = [...byMonth.entries()].map(([month, monthEntries]) => {
+  const [year, monthNumber] = month.split("-").map(Number);
+  const firstDay = new Date(Date.UTC(year, monthNumber - 1, 1));
+  const leadingBlanks = (firstDay.getUTCDay() + 6) % 7;
+  const daysInMonth = new Date(Date.UTC(year, monthNumber, 0)).getUTCDate();
+  const entriesByDay = new Map(
+    monthEntries.map(entry => [Number(entry.date.slice(-2)), entry])
+  );
+  const cells = [
+    ...Array.from({ length: leadingBlanks }, () => null),
+    ...Array.from({ length: daysInMonth }, (_, index) => index + 1),
+  ];
+
+  while (cells.length % 7 !== 0) cells.push(null);
+
+  return {
+    label: monthFormatter.format(firstDay),
+    entriesByDay,
+    weeks: Array.from({ length: cells.length / 7 }, (_, index) =>
+      cells.slice(index * 7, index * 7 + 7)
+    ),
+  };
+});
+---
+
+<nav
+  class="border-border bg-muted/20 mt-8 rounded-sm border p-4 sm:p-5"
+  aria-labelledby="study-calendar-title"
+  data-date-calendar
+>
+  <div class="mb-5 flex flex-wrap items-end justify-between gap-2">
+    <div>
+      <p class="text-accent text-xs font-semibold tracking-widest uppercase">
+        Browse by date
+      </p>
+      <h2 id="study-calendar-title" class="mt-1 text-xl font-bold">
+        Study calendar
+      </h2>
+    </div>
+    <p class="text-muted-foreground text-sm">
+      Select a highlighted day to jump to its notes.
+    </p>
+  </div>
+
+  <div class="grid gap-5 md:grid-cols-2">
+    {
+      months.map(month => (
+        <section
+          class="border-border bg-background rounded-sm border p-3"
+          aria-label={month.label}
+        >
+          <h3 class="mb-2 text-center text-sm font-semibold tracking-wide">
+            {month.label}
+          </h3>
+          <table class="w-full table-fixed border-collapse text-center text-sm">
+            <thead>
+              <tr class="text-muted-foreground text-[0.65rem] uppercase">
+                {weekdays.map(day => (
+                  <th scope="col" class="py-1 font-medium">
+                    {day.slice(0, 1)}
+                    <span class="sr-only">{day.slice(1)}</span>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {month.weeks.map(week => (
+                <tr>
+                  {week.map(day => {
+                    const entry = day ? month.entriesByDay.get(day) : undefined;
+                    return (
+                      <td class="h-10 p-0.5">
+                        {entry ? (
+                          <a
+                            href={`#${entry.id}`}
+                            class="bg-accent text-accent-foreground focus-visible:outline-accent inline-flex size-9 items-center justify-center rounded-full font-semibold no-underline transition-transform hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2"
+                            aria-label={`${entry.date}: ${entry.heading}`}
+                            title={entry.heading}
+                            data-date-target={entry.id}
+                          >
+                            {day}
+                          </a>
+                        ) : day ? (
+                          <span class="text-muted-foreground/55 inline-flex size-9 items-center justify-center">
+                            {day}
+                          </span>
+                        ) : null}
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      ))
+    }
+  </div>
+</nav>
+
+<script>
+  function setupDateCalendar() {
+    const calendar = document.querySelector<HTMLElement>(
+      "[data-date-calendar]"
+    );
+    if (!calendar) return;
+
+    const updateCurrentDate = () => {
+      const activeId = decodeURIComponent(window.location.hash.slice(1));
+      for (const link of calendar.querySelectorAll<HTMLAnchorElement>(
+        "[data-date-target]"
+      )) {
+        const isActive = link.dataset.dateTarget === activeId;
+        link.classList.toggle("ring-2", isActive);
+        link.classList.toggle("ring-foreground", isActive);
+        link.classList.toggle("ring-offset-2", isActive);
+        link.classList.toggle("ring-offset-background", isActive);
+        if (isActive) link.setAttribute("aria-current", "date");
+        else link.removeAttribute("aria-current");
+      }
+    };
+
+    if (calendar.dataset.ready === "true") {
+      updateCurrentDate();
+      return;
+    }
+
+    calendar.dataset.ready = "true";
+    updateCurrentDate();
+    window.addEventListener("hashchange", updateCurrentDate);
+  }
+
+  setupDateCalendar();
+  document.addEventListener("astro:after-swap", setupDateCalendar);
+  document.addEventListener("astro:page-load", setupDateCalendar);
+</script>
