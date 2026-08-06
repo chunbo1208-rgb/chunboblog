@@ -1,6 +1,6 @@
 ---
 author: Chunbo Liu
-title: Number Theory: Problem and Concepts
+title: "Number Theory: Problem and Concepts"
 description: Some notes on the book 
 pubDatetime: 2026-08-04T04:41:05.638Z
 modDatetime: 2026-08-04T04:41:05.638Z
@@ -360,4 +360,3 @@ $$
 $$
 
 b) Prove that $\binom{n}{k}_q$ is an integer for all n, k. _Strong induction on n+k_
-
