@@ -3,7 +3,7 @@ author: Chunbo Liu
 title: Math Contest Retake
 description: This is the first time I retake up my math contest career, I really want to say my experiences here.
 pubDatetime: 2026-07-12T12:39:11.152Z
-modDatetime: 2026-07-31T16:21:41.708Z
+modDatetime: 2026-08-06T23:38:50.805Z
 tags: 
 - math contest
 - experiences
@@ -968,4 +968,85 @@ This problem really make me stuck at the very first step: how to use that AD:bis
 While the problem construct a $F$, so that $ABFC$ are concyclic, and $FB=FC$
 
 
-# 0805
+# 0806
+Problems today
+## I did a piece of paper
+While, in the exam system, how to give answers quickly and correctly. We have 1h20min, 8 short problems just ask for answer, and 3 problems that require process. So the tricks should be really steady and trained.
+
+To summarize here, the score board is here
+
+| **Problem** | **Score** | **Mistake**                                                                                                               |
+| ----------- | --------- | ------------------------------------------------------------------------------------------------------------------------- |
+| 1           | 8/8       |                                                                                                                           |
+| 2           | 8/8       | Still Overcomplicated, I can start by trial some numbers, finding the core is the most impostant                          |
+| 3           | 8/8       | When nothing mentioned, roots can be complex, so don't be worried and hesitated when facing $\sum x_i^2=-6$               |
+| 4           | 0/8       | Computing Overengineered then wrong                                                                                       |
+| 5           | 0/8       | orders matter in computing multitask probabilities                                                                        |
+| 6           | 8/8       |                                                                                                                           |
+| 7           | 0/8       | misunderstand the problem!                                                                                                |
+| 8           | 0/8       | Learn the method (I skipped this problem)                                                                                 |
+| 9           | 0/16      | When I am solving, the computing work get really uncontrolible                                                            |
+| 10          | 10/20     | The final part, I mistake at $k^2-k$ at the wrong direction. Mind small mistakes, DETAIL REALLY MATTERS!!!                |
+| 11          | 5/20      | First part about $a_i=b_i$ is right, but then I need to be fully skilled to go deeper. I still have time at this problem. |
+
+
+### Problem 2
+The number of integer solutions to the inequality $\log_6(1 + \sqrt{x}) > \log_{25} x$ is $\underline{\qquad}$.
+
+$x=25^t$, then $1+5^t>6^t$, there is only $t<1$, so $x=1,\cdots 24$, totally 24 solutions.
+
+### Problem 4
+In tetrahedron $ABCD$, one edge has length 3, and the remaining five edges all have length 2. The radius of its circumscribed sphere is $\underline{\qquad}$.
+
+In such questions, don't set coordinates directly, discover the geometry property first. We set triangle of (2,2,3) as base, then $A-BCD$, The center $O$ of plain triangle $\triangle BCD$ and $A$ are in the same vertical line. 
+
+Just compute this carefully. The answer is $\sqrt21/3$ .
+
+### Problem 5
+A fair six-sided die, with faces labeled 1, 2, 3, 4, 5, 6, is thrown three times. The probability that the three numbers appearing on the top face can form the side lengths of a triangle whose perimeter is divisible by 3 is $\underline\qquad$.
+
+Where I wrong here is I count less and lost the times that as (a,b,c), there are 6 kinds of order to get access to this set.
+
+Then $(i,i,i): 6\times 1$, $(i,i,j):3\times 3$, $(i,j,k): 3\times 6$, and the result is $\frac{6+9+18}{6\times 6\times 6}=11/72$
+
+### Problem 7
+Let point $P$ move on the right branch of the hyperbola $\frac{x^2}{16} - \frac{y^2}{9} = 1$ excluding the vertices, and let $E, F$ be its left and right foci, respectively. Point $A$ is the ex-center of $\triangle PEF$ within $\angle PEF$. The equation of the locus of point $A$ is $\underline\qquad$.
+
+At first, I think it is P-excenter, so my wrong answer is $x=-4$ Carefully check the problem!!!!
+
+It seems that even if I read it rightly, I still have no idea on it. I can find that $I_E(PF+4,r)$ buw what to do then?
+
+Use the property of Appolonius Circle.
+We suppose A is the ex-center, $B=PA\cap x$ axis. Then $$\frac{BA}{AP}=\frac{BF}{FP}=\frac{BE}{EP}=\frac{BE-BF}{EP-FP}=\frac{EF}{2a}=\frac{10}{8}=\frac{5}{4}$$But we need the coordinates of $B(x_B,0)$, $$\frac54=\frac{BF}{PF}=\frac{x_B-5}{ex_0-a}\Rightarrow\frac{x_0}{x_B}=\frac{16}{25}$$ Use the steady ratio at A, solves it
+
+### Problem 8
+**8.** Given $A = \{1, 2, \dots, 14\}$, find the number of all non-empty subsets of $A$ such that the sum of the elements in the subset is a multiple of 5: $\underline\qquad$.
+
+
+**roots-of-unity filter**
+Let $\zeta=e^{2\pi i/5}$. The roots-of-unity filter counts subsets whose sums are $0\pmod 5$:
+$$N=\frac15\sum_{j=0}^{4}\prod_{a=1}^{14}(1+\zeta^{ja}). $$
+
+>Here $N$ includes the empty subset.
+	Reason:   $$1+\zeta^m+\zeta^{2m}+\zeta^{3m}+\zeta^{4m} = \begin{cases} 5,&m\equiv0\pmod5,\\ 0,&m\not\equiv0\pmod5. \end{cases}$$
+	Therefore,
+$$\boxed{\mathbf 1_{m\equiv0\pmod5} =\frac15\sum_{j=0}^{4}\zeta^{jm}}$$
+This is the roots-of-unity filter. 
+
+
+And we need to compute the final part of this: $j=0,N_{j=0}=\frac15 2^{14}$, for $j=1,2,3,4$, $$N_{j}=\frac15(2^2) [\Phi_5(-1)]^3=\frac 45$$
+Then sum it up and delete the empty set, answer is $3279$
+### Problem 9
+
+**9. (16 points)** Let $A$ be a moving point on the hyperbola $y = \frac{2026}{x}$. Two tangent lines $AP, AQ$ are drawn from $A$ to the ellipse $\frac{x^2}{25} + \frac{y^2}{9} = 1$, where $P, Q$ are the points of tangency. If $F$ is the left focus of the ellipse, find the minimum value of $\frac{\vert{}AF\vert{}^2}{\vert{}PF\vert{} \cdot \vert{}QF\vert{}}$.
+
+When Computing, I need to remind that "2026" is not a useful, number and don't be hurry to finish this.
+### Problem 11
+Given two sequences, the sequence $\{a_n\}$ satisfies $a_0 = 1, a_1 = 13, a_{n+1} = \frac{a_n^2 + 64}{a_{n-1}}$ ($n \in \mathbb{N}_+$); the sequence $\{b_n\}$ satisfies $b_0 = 1, b_{n+1} = 9b_n + \sqrt{80b_n^2 - 64}$ ($n \in \mathbb{N}$). Prove that for any $n \in \mathbb{N}$, $a_n + b_n$ can be expressed as the sum of the squares of two positive integers.
+
+(1) $a_n=b_n$, I'm right in this part.
+(2) Later is the induction
+
+
+## 2026 SCMO: Southeast Math Olympiad
+Continue to the [2026 中国东南数学奥林匹克 notes](../../columns/math-contest/scmo/2026scmo.md).

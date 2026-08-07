@@ -29,12 +29,24 @@ export default defineAstroPaperConfig({
     search: "pagefind",
   },
   socials: [
-    { name: "github",   url: "https://github.com/chunbo1208-rgb" },
-    { name: "x",        url: "https://x.com/Chunb_liu" },
-    { name: "youtube", url: "https://www.youtube.com/@SiliRouter" },
-    { name: "bilibili", url: "https://space.bilibili.com/3546884723444099?spm_id_from=333.1007.0.0" },
-    { name: "mail",     url: "mailto:chunbo1208@gmail.com" },
-
+    { name: "github", url: "https://github.com/chunbo1208-rgb" },
+    { name: "x", url: "https://x.com/Chunb_liu" },
+    {
+      name: "youtube",
+      url: "https://www.youtube.com/@SiliRouter",
+      linkTitle: "ChunboBlog on YouTube",
+    },
+    {
+      name: "bilibili",
+      url: "https://space.bilibili.com/3546884723444099?spm_id_from=333.1007.0.0",
+      linkTitle: "ChunboBlog on Bilibili",
+    },
+    {
+      name: "instagram",
+      url: "https://www.instagram.com/chunb_liu/",
+      linkTitle: "ChunboBlog on Instagram",
+    },
+    { name: "mail", url: "mailto:chunbo1208@gmail.com" },
   ],
   shareLinks: [
     { name: "whatsapp", url: "https://wa.me/?text=" },

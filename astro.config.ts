@@ -21,6 +21,55 @@ import { transformerFileName } from "./src/utils/transformers/fileName";
 import config from "./astro-paper.config";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import path from "node:path";
+
+function remarkContentLinks() {
+  const contentRoot = path.resolve("src/content");
+
+  return (tree: any, file: any) => {
+    if (!file.path) return;
+
+    const visit = (node: any) => {
+      if (node.type === "link" && typeof node.url === "string") {
+        const [sourcePath, anchor] = node.url.split("#", 2);
+
+        if (
+          sourcePath &&
+          !sourcePath.startsWith("/") &&
+          !/^[a-z][a-z\d+.-]*:/i.test(sourcePath) &&
+          /\.mdx?$/i.test(sourcePath)
+        ) {
+          let decodedPath = sourcePath;
+          try {
+            decodedPath = decodeURIComponent(sourcePath);
+          } catch {
+            // Keep malformed URLs unchanged.
+          }
+
+          const targetPath = path.resolve(path.dirname(file.path), decodedPath);
+          const relativePath = path
+            .relative(contentRoot, targetPath)
+            .split(path.sep)
+            .join("/");
+          const match = relativePath.match(
+            /^(posts|columns|pages)\/(.+)\.mdx?$/i
+          );
+
+          if (match) {
+            const [, collection, entry] = match;
+            const route = entry.replace(/\/index$/, "");
+            const prefix = collection === "pages" ? "" : `/${collection}`;
+            node.url = `${prefix}/${route}${anchor ? `#${anchor}` : ""}`;
+          }
+        }
+      }
+
+      node.children?.forEach(visit);
+    };
+
+    visit(tree);
+  };
+}
 
 function remarkDoubleDollarBlock() {
   return (tree: any, file: any) => {
@@ -96,6 +145,7 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [
+        remarkContentLinks,
         remarkMath,
         remarkDoubleDollarBlock,
         remarkBreaks,
