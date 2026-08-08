@@ -1050,3 +1050,61 @@ Given two sequences, the sequence $\{a_n\}$ satisfies $a_0 = 1, a_1 = 13, a_{n+1
 
 ## 2026 SCMO: Southeast Math Olympiad
 Continue to the [2026 中国东南数学奥林匹克 notes](../../columns/math-contest/scmo/2026scmo.md).
+
+
+# 0808
+## Test today
+
+ July 2026 Mystery Competition First Test Problems
+
+
+| Problem | Score | Experiences                                                                                                                                   |
+| ------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1       | 8     |                                                                                                                                               |
+| 2       | 0     | Use the square to avoid the discussion of Absolute value                                                                                      |
+| 3       | 0     | $\Omega=31\times 30$ not $31\times 31$!!!                                                                                                     |
+| 4       | 0     |                                                                                                                                               |
+| 5       | 8     |                                                                                                                                               |
+| 6       | 8     |                                                                                                                                               |
+| 7       | 0     | Learn the method to compute this                                                                                                              |
+| 8       | 8     |                                                                                                                                               |
+| 9       | 8     | The final part is not to solve equations like $\frac 1\omega =\sin(\omega\pi)$ it is the other part matters the $\frac \pi 3$. Small mistakes |
+| 10      | 20    |                                                                                                                                               |
+| 11      | 0     |                                                                                                                                               |
+|         |       |                                                                                                                                               |
+|         |       |                                                                                                                                               |
+
+
+### I. Fill-in-the-Blank Problems (8 problems in total, 8 points for each problem, total 64 points)
+
+1. Given positive real numbers $a, b$ satisfying $\log_{2}\log_{4}a+1=\log_{2}b$, then the value of $a\cdot2^{-b}$ is ____.
+
+2. Let $f(x)$ be an even function defined on $\mathbb{R}$ such that $f(x)$ is strictly monotonically increasing on $[0,+\infty)$. If a real number $a\neq0$ satisfies: for any $x\ge-1$, $f(|x-a|)\ge f(x)$ always holds, then the range of values for $a$ is ____.
+
+3. Let set $X=\{1,2,3,4,5\}$. From all non-empty subsets of $X$, two distinct subsets $A$ and $B$ are chosen sequentially with equal probability to form an ordered pair $(A,B)$. Then the probability that the event "$A$ and $B$ are disjoint" and the event "the number of odd integers in $A$ equals the number of even integers in $B$" occur simultaneously is ____.
+
+4. Let $\lambda$ be a real number such that there exists an arithmetic progression $\{a_{n}\}$ where the solution set of the inequality $a_{n+1}^{2}\ge\lambda a_{n}a_{n+2}$ with respect to positive integers $n$ is precisely $\{1,2,\dots,10\}$. Then the range of values for $\lambda$ is ____.
+
+5. Given that the circumcenter of $\triangle ABC$ is $O$, $|\vec{AB}|=4$, and $|\vec{AC}|=2$. Let $M$ be the midpoint of $AO$. If $\vec{MB}\cdot\vec{AC}=4$, then $|\vec{BC}|=$ ____.
+
+6. In the plane, hyperbola $\Gamma_{1}$ and ellipse $\Gamma_{2}$ share the same two foci $F_{1}, F_{2}$. Let the four intersection points of $\Gamma_{1}$ and $\Gamma_{2}$ be $A, B, C, D$, arranged sequentially on $\Gamma_{2}$. If the area of quadrilateral $AF_{2}CF_{1}$ equals the area of quadrilateral $ABCD$, then the product of the eccentricities of $\Gamma_{1}$ and $\Gamma_{2}$ is ____.
+
+7. Let triangular pyramid $A-BCD$ satisfy $AB, BC, BD$ being mutually perpendicular, with $AB=BC=BD=3$. Let $M, N$ be the midpoints of $BC, BD$ respectively. If the distance from point $B$ to the plane passing through $M$ and $N$ is $1$, then all possible values for the area of the cross-section obtained by intersecting $A-BCD$ with this plane are ____.
+
+8. Arranging 4 twos, 2 zeros, and 2 sixes (8 numbers in total) in a line such that the string "20" and the string "26" do not both appear (i.e., at least one of them does not appear), then the number of such arrangements is ____.
+
+---
+
+### II. Answer Problems (3 problems in total, total 56 points. Answers should include textual explanations, proof steps, or calculation processes.)
+
+9. **(16 points)** Let $\omega$ be a real number. Define
+$$f(x)=\left|\omega\sin\left(\omega x+\frac{\pi}{3}\right)\right|$$
+If there exists $x_{0} \in \left[0,\frac{\pi}{2}\right]$ such that $f(x_{0})\ge1$, find the range of values for $\omega$. *(Proposed by Yiyan Lin)*
+
+10. **(20 points)** Let $a, b, c$ be real numbers, and let $z_{1}, z_{2}, z_{3}, z_{4}$ be the 4 complex roots of the equation $x^{4}+20x^{3}+ax^{2}+bx+c=0$. If 
+$$\{|z_{i}-z_{j}| : 1\le i < j\le 4\} = \{\sqrt{2}, 2\}$$
+find all possible values of $a$. *(Proposed by Yiyan Lin)*
+
+11. **(20 points)** In the Cartesian coordinate plane $xOy$, curve $\Gamma: |x|+y^{2}=1$. Let $A_{1}, A_{2}, A_{3}, A_{4}, A_{5}, A_{6}$ be six distinct vertices arranged sequentially on $\Gamma$, satisfying that for $i=1,2,3$, the line segment $A_{i}A_{i+1}$ is parallel and equal in length to line segment $A_{i+3}A_{i+4}$ (with the convention $A_{7}=A_{1}$).
+- **(1)** Prove that for $i=1,2,3$, points $A_{i}$ and $A_{i+3}$ are symmetric with respect to the origin;
+- **(2)** Find the maximum possible area of the hexagon $A_{1}A_{2}A_{3}A_{4}A_{5}A_{6}$. *(Proposed by Yiyan Lin)*
