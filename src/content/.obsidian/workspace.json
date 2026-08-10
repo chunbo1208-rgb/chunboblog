@@ -83,7 +83,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "e9013804108e390d",
@@ -190,6 +191,9 @@
   },
   "active": "0613b091780a0522",
   "lastOpenFiles": [
+    "columns/math-contest/wcmi/index.md",
+    "columns/math-contest/wcmi/2026wcmi.md",
+    "columns/math-contest/wcmi",
     "columns/math-contest/scmo/2026scmo.md",
     "posts/math_contest/math-contest.md",
     "columns/math-contest/scmo/index.md",

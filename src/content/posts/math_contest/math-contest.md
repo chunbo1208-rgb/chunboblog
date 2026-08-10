@@ -1108,3 +1108,10 @@ find all possible values of $a$. *(Proposed by Yiyan Lin)*
 11. **(20 points)** In the Cartesian coordinate plane $xOy$, curve $\Gamma: |x|+y^{2}=1$. Let $A_{1}, A_{2}, A_{3}, A_{4}, A_{5}, A_{6}$ be six distinct vertices arranged sequentially on $\Gamma$, satisfying that for $i=1,2,3$, the line segment $A_{i}A_{i+1}$ is parallel and equal in length to line segment $A_{i+3}A_{i+4}$ (with the convention $A_{7}=A_{1}$).
 - **(1)** Prove that for $i=1,2,3$, points $A_{i}$ and $A_{i+3}$ are symmetric with respect to the origin;
 - **(2)** Find the maximum possible area of the hexagon $A_{1}A_{2}A_{3}A_{4}A_{5}A_{6}$. *(Proposed by Yiyan Lin)*
+
+
+## Daily Training problem
+Today's theme is Inequalities
+
+### Technique 1: Characteristic Function
+1. Suppose that $a_1,\cdots,a_n>0$, and $x_1,\cdots,x_n\in \mathbb{R}$, such that $\sum_{i=1}^na_ix_i=0$. Prove that $$\sum_{1\le i<j\le n} x_ix_j|a_i-a_j|\le 0$$This is a typical quadratic form, so we need to make $|a_i-a_j|$ into the form of $f(i)f(j)$. WE think this $$|a_i-a_j|=a_i+a_j-2\min(a_i,a_j)$$Let's make the form more specific and clear: $$\sum_{1\le i<j\le n} x_ix_j(a_i+a_j-2\min(a_i,a_j))=-2\sum_{i=1}^n\sum_{j=1}^n \min(a_i,a_j)$$Then how we deal with $\min$? Actually this is quite interesting, we use the idea of Characteristic  Function: $$\min(a_i,a_j)=\int_0^\infty\mathbb{1}_{[0,a_i]}(t)\cdot\mathbb{1}_{[0,a_j]}(t)dt$$Then finished
