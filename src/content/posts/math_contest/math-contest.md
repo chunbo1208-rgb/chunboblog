@@ -1115,3 +1115,84 @@ Today's theme is Inequalities
 
 ### Technique 1: Characteristic Function
 1. Suppose that $a_1,\cdots,a_n>0$, and $x_1,\cdots,x_n\in \mathbb{R}$, such that $\sum_{i=1}^na_ix_i=0$. Prove that $$\sum_{1\le i<j\le n} x_ix_j|a_i-a_j|\le 0$$This is a typical quadratic form, so we need to make $|a_i-a_j|$ into the form of $f(i)f(j)$. WE think this $$|a_i-a_j|=a_i+a_j-2\min(a_i,a_j)$$Let's make the form more specific and clear: $$\sum_{1\le i<j\le n} x_ix_j(a_i+a_j-2\min(a_i,a_j))=-2\sum_{i=1}^n\sum_{j=1}^n \min(a_i,a_j)$$Then how we deal with $\min$? Actually this is quite interesting, we use the idea of Characteristic  Function: $$\min(a_i,a_j)=\int_0^\infty\mathbb{1}_{[0,a_i]}(t)\cdot\mathbb{1}_{[0,a_j]}(t)dt$$Then finished
+
+
+
+# 0814
+
+## Pre-test
+
+## I. Fill-in-the-Blank Questions (8 questions in total, 8 points for each, 64 points in total)
+
+1. Let $a$ be a real number satisfying $\log_{27} a + \log_a 3 = \frac{7}{6}$, then $a =$ ______.
+
+2. Given that $\triangle ABC$ and $\triangle ADC$ are both equilateral triangles with side length $1$, and point $P$ is a point inside (or on the boundary of) parallelogram $ABCD$, then the maximum possible value of $(\vec{PA} + \vec{PB}) \cdot (\vec{PC} + \vec{PD})$ is ______.
+
+It shouldn't be that complex, just consider midpoint.
+
+3. There are two distinct points $A(4, 2)$ and $B(b^2, b)$ on the parabola $y^2 = x$. If there does not exist any point $C$ on the parabola (other than $A$ and $B$) such that $\angle ACB = 90^\circ$, then the range of $b$ is ______.
+
+When stating the equation, don't split it out and dombly multiplication, use factor combination to make it more possible to solve.
+
+4. In $\triangle ABC$, $\angle ACB = 3\angle ABC$, $AC = 4$, and $AB = 5$. Then $\cos \angle ACB =$ ______.
+    
+5. Given that a real arithmetic progression $\{a_n\}$ satisfies $a_1 + a_2 + a_3 = a_1^2 + a_2^2 + a_3^2$. Then the maximum possible value of $a_6$ is ______.
+
+Don't express the function and use derivation, that's to complex!!!!! Use Cauchy instead
+
+6. Let $\Gamma$ be a regular tetrahedron. Among the 10 points consisting of the 4 vertices and the midpoints of the 6 edges of $\Gamma$, 4 points are chosen at random. The probability that the chosen points lie on the same plane is ______.
+
+Remember to consider this situation: 2 vertexes and the midpoint in the opposite side
+
+7. Let tetrahedron $ABCD$ satisfy $AC = BD = 5$ and $AB = 7$. If the three pairs of opposite edges of the tetrahedron are mutually perpendicular, then the maximum value of the sum of its edge lengths is ______.
+
+Use Arithmetic Power Line to track that perpendicular: don't be domb!!!!
+
+8. Five numbers (allowing repetitions, order does not matter) are selected from the 9 positive integers $1, 2, 3, \dots, 8, 9$ such that the product of these five numbers is a perfect square. The number of all possible selections is ______.
+    
+
+The combination form: choosing items from a infinite multi-set: it is equivalent to the solution of a linear nonnegative integer solution: count the number of choosing each.
+
+## II. Answer Questions (3 questions in total; Problem 9 is worth 16 points, Problems 10 and 11 are worth 20 points each, 56 points in total)
+
+9. Let real numbers $a, b$ satisfy $a < b$. Given that the solution set of the system of inequalities
+    
+    $$\begin{cases} x^2 + ax + b > 0 \\ ax^2 + bx > 0 \end{cases}$$
+    
+    is $[a, b]$. Find $a$ and $b$.
+    
+10. Let $a \neq 0$ be a real number, and let $z \in \mathbb{C}$ be a root of the equation $x^{2026} + ax^{2025} + \frac{1}{2025} = 0$ satisfying $\vert{}z\vert{} > 1$. Prove that $z$ is a real number.
+
+Actually, I make this so much complex by tracking the $\arg z$ and $\arg z+a$ but actually, it is impossible to compare how small of each, cuz it is hard to compare when they are both small, so use a triangle form instead, and don't estimate it so early!
+
+11. In the Cartesian coordinate system $xOy$, $A$ is a point on the hyperbola $C: x^2 - \frac{y^2}{2} = 1$. The points $T_1, T_2$ are $\left(\frac{\sqrt{3}}{3}, 0\right)$ and $\left(-\frac{\sqrt{3}}{3}, 0\right)$ respectively. Lines $AT_1$ and $AT_2$ intersect the hyperbola at points $M$ and $N$ respectively (distinct from $A$), where $A$ lies in the first quadrant, and $M, N$ lie in the third quadrant. Through $A$, draw $AB \perp OA$ intersecting the hyperbola at point $B$ (distinct from $A$). Prove that the four points $A, B, M, N$ are concyclic (lie on the same circle).
+    
+
+# May 2026 Yuanfudao High School Mathematics Olympiad Mock Exam (YMO) - Second Round (Add-On)
+
+### Problem 1 (40 points)
+
+Let $a_1, a_2, \dots, a_{2026}$ be real numbers satisfying
+
+$$\vert{}2a_1\vert{} + \vert{}3a_2 - a_1\vert{} + \vert{}4a_3 - 2a_2\vert{} + \dots + \vert{}2027a_{2026} - 2025a_{2025}\vert{} = 1.$$
+
+Find the maximum value of $\sum_{k=1}^{2026} \vert{}a_k\vert{}$.
+
+### Problem 2 (40 points)
+
+As shown in the figure, in $\triangle ABC$, the circumcircle is $\odot O$, $H$ is the orthocenter, $X$ is the midpoint of $AH$, and $AD \perp BC$ at point $D$. Point $E$ lies on segment $AH$ such that $HE = HD$. Line $EY \parallel BC$ intersects $AC$ at point $Y$, and point $Z$ lies on $\odot O$ such that $OX$ is the exterior angle bisector of $\angle COZ$.
+
+Prove that if $OH \perp BY$, then $OX \perp YZ$.
+
+### Problem 3 (50 points)
+
+For an integer $n \ge 10$, define $S(n)$ as the sum of digits of $n$ in base $10$, and define $S^l(n)$ as the $l$-th iteration of $S(n)$. Take the smallest $l(n)$ such that $S^{l(n)}(n) \le 9$, and define $f(n) = \sum_{i=1}^{l(n)} S^i(n)$. The sequence $\{a_n\}$ satisfies $a_1 \ge 10$ and $a_{n+1} = a_n + f(a_n)$. Prove that there exists a positive integer $k$ such that $9 \mid a_k$.
+
+### Problem 4 (50 points)
+
+Given a positive integer $t$. For a set of positive integers $A$, define a mapping $f_A: \mathbb{N}^+ \to \mathbb{N}$ such that for all $a \in \mathbb{N}^+$, $f_A(a)$ represents the number of positive integers in $A$ that are no greater than $a$. A set $A$ is called a _good set_ if $A$ satisfies: for any $m \in \mathbb{N}^+$, $m \in A$ if and only if there does not exist $a \in A$ such that $m = a + t f_A(a)$.
+
+Does there exist a constant $c$ such that for any good set $A$ and for all $a \in A$, $a < c f_A(a)$ holds? If so, find the minimum constant $c$; if not, please prove it.
+
+
+
