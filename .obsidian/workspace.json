@@ -1,0 +1,220 @@
+{
+  "main": {
+    "id": "75cffa6839b9bf2b",
+    "type": "split",
+    "children": [
+      {
+        "id": "5586afd7b6ffb2af",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7e20fd3307b5299d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "src/content/posts/about-perfect-matching.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "about-perfect-matching"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ecf99f0465d1f97c",
+    "type": "split",
+    "children": [
+      {
+        "id": "6942932d11e6f0f3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ef1042b93562caef",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "2e4125f1507696e8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "cfb5ccc1f68482c9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "3e7ebc4d2b2fe180",
+    "type": "split",
+    "children": [
+      {
+        "id": "90488b330a0667ca",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "428e1071e8b25354",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "d541ca3d3a0e0666",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "4dd7deb2ebc4ef55",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "1af31dbdeea99e48",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "8f93d491922c3d95",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Welcome.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "7e20fd3307b5299d",
+  "lastOpenFiles": [
+    "dist/sitemap-index.xml",
+    "dist/sitemap-0.xml",
+    "dist/_astro/20260621-3.C0Cwnqcl_11VzPO.webp",
+    "dist/_astro/ap-physics-em-fig2.gCHB49YL_ZlrBVy.webp",
+    "dist/_astro/ap-physics-fig1.HGt0KFc9_1yGfU6.webp",
+    "dist/index.html",
+    "dist/tags/index.html",
+    "dist/tags/高考/index.html",
+    "dist/tags/高考",
+    "dist/tags/quantum-mechanics/index.html",
+    "dist/tags/quantum-mechanics",
+    "dist/tags/python/index.html",
+    "dist/tags/python",
+    "dist/tags/organic-chemistry/index.html",
+    "dist/posts/physics/how-to-describe-rotation/index.png",
+    "dist/posts/physics/why-allene-is-not-stable_ch/index.png",
+    "dist/posts/math_contest/titu-number-theory/index.png",
+    "dist/posts/math_contest/math-contest/index.png",
+    "dist/posts/math_contest/introductory-combinatorics/index.png",
+    "dist/posts/math_contest/integral-point-to-area/index.png",
+    "dist/posts/math_contest/gauss-lucas-theorem/index.png",
+    "src/content/posts/_drafts/About Perfect Matching.md",
+    "src/content/posts/about-perfect-matching.md",
+    "src/content/posts/_drafts/Untitled.md",
+    "src/content/posts/_drafts/what-is-self-discipline.md",
+    "Blog Dashboard.md",
+    "Welcome.md"
+  ]
+}

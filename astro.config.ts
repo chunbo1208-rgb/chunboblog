@@ -126,6 +126,44 @@ function remarkDoubleDollarBlock() {
   };
 }
 
+function remarkObsidianHighlights() {
+  return (tree: any) => {
+    const visit = (node: any) => {
+      if (!Array.isArray(node.children)) return;
+
+      node.children = node.children.flatMap((child: any) => {
+        if (child.type !== "text" || !child.value.includes("==")) {
+          visit(child);
+          return child;
+        }
+
+        const parts = [];
+        const pattern = /==(.+?)==/g;
+        let cursor = 0;
+        let match;
+
+        while ((match = pattern.exec(child.value)) !== null) {
+          if (match.index > cursor) {
+            parts.push({ type: "text", value: child.value.slice(cursor, match.index) });
+          }
+          parts.push({ type: "html", value: "<mark>" });
+          parts.push({ type: "text", value: match[1] });
+          parts.push({ type: "html", value: "</mark>" });
+          cursor = match.index + match[0].length;
+        }
+
+        if (cursor === 0) return child;
+        if (cursor < child.value.length) {
+          parts.push({ type: "text", value: child.value.slice(cursor) });
+        }
+        return parts;
+      });
+    };
+
+    visit(tree);
+  };
+}
+
 export default defineConfig({
   site: config.site.url,
   integrations: [
@@ -148,6 +186,7 @@ export default defineConfig({
         remarkContentLinks,
         remarkMath,
         remarkDoubleDollarBlock,
+        remarkObsidianHighlights,
         remarkBreaks,
         remarkToc,
         [remarkCollapse, { test: "Table of contents" }],

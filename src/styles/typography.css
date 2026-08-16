@@ -82,6 +82,10 @@
       @apply border-s-accent/80 wrap-break-word opacity-80;
     }
 
+    mark {
+      @apply bg-yellow-300/60 text-foreground rounded-sm px-0.5;
+    }
+
     details:not(.callout) {
       @apply text-foreground inline-block cursor-pointer select-none [&_p]:hidden [&_ul]:my-0!;
     }

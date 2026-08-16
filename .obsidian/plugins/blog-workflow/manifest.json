@@ -1,0 +1,9 @@
+{
+  "id": "blog-workflow",
+  "name": "Chunbo Blog Workflow",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "Updates blog modification times and publishes approved posts.",
+  "author": "Chunbo Liu",
+  "isDesktopOnly": false
+}

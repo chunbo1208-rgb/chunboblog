@@ -1,0 +1,40 @@
+filters:
+  and:
+    - file.inFolder("src/content/posts")
+    - 'file.ext == "md" || file.ext == "mdx"'
+    - '!file.path.contains("/_previous/")'
+    - '!file.path.contains("/_drafts/") || publishStatus != null'
+properties:
+  file.name:
+    displayName: File
+  title:
+    displayName: Title
+  publishStatus:
+    displayName: Publishing
+  draft:
+    displayName: Draft
+  modDatetime:
+    displayName: Last edited
+views:
+  - type: table
+    name: Unpushed
+    filters:
+      or:
+        - publishStatus == "unpushed"
+        - publishStatus == "ready"
+    order:
+      - file.name
+      - title
+      - publishStatus
+      - draft
+      - modDatetime
+  - type: table
+    name: Pushed
+    filters:
+      or:
+        - publishStatus == "published"
+        - publishStatus == null
+    order:
+      - file.name
+      - title
+      - modDatetime

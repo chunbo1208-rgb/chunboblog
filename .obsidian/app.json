@@ -1,0 +1,10 @@
+{
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "src/content/illus",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "src/content/posts/_drafts",
+  "newLinkFormat": "relative",
+  "promptDelete": false,
+  "showUnsupportedFiles": true,
+  "useMarkdownLinks": true
+}
