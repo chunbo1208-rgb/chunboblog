@@ -3,7 +3,7 @@ author: Chunbo Liu
 title: About Perfect Matching
 description: The matching idea from 2024 CGMO 8
 pubDatetime: 2026-08-15T15:39:33.992Z
-modDatetime: 2026-08-16T14:12:56.657Z
+modDatetime: 2026-08-16T14:17:02.528Z
 draft: false
 publishStatus: published
 tags:
@@ -54,6 +54,10 @@ Here are some properties of good vertex
 - For those who are not good vertex, their pair can only have 2 edges between A and B, which they all connect with one vertex
 So we can get a more specific bound, there are at most $$\binom{44}{2}-\binom{k}{2}+2(22-k)+56k=22\times 23+\frac12k(109-k)\le 1947<2024$$
 Contradiction Finally!
+
+**About (3)**
+We don't have much better ideas here, so we can only use adjustment to find an exact one.
+
 
 
 ### Erdős–Gallai’s matching extremal theorem: 
