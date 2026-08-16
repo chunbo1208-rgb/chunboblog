@@ -3,7 +3,7 @@ author: Chunbo Liu
 title: About Perfect Matching
 description: The matching idea from 2024 CGMO 8
 pubDatetime: 2026-08-15T15:39:33.992Z
-modDatetime: 2026-08-16T14:17:02.528Z
+modDatetime: 2026-08-16T16:35:17.496Z
 draft: false
 publishStatus: published
 tags:
@@ -65,7 +65,3 @@ A classical theorem says that if an $N$-vertex graph contains no matching with $
 
 Equivalently,
 $$\operatorname{ex}(N,(k+1)K_2) = \max\left\{ \binom{2k+1}{2}, \binom{k}{2}+k(N-k) \right\}$$
-
-The feeling is like, in a graph of N vertex, if we can't find a matching like that (more than $k+1$ edges of matchings) then there wont be much edges in this graph.
-
-We can try to prove this by any chance: As we find the **biggest** matching as a subgraph in this graph $A(V,E)$, which $V(A)\le 2k$, and there are $N-2k$ vertexes who can't be attend into the  "biggest matching family". We want to find the edged situation. We denote the rest part as $B$, then we know that there won't be any edges in $B$, thus there are at most $\binom{2k}{2}+2k(N-2k)$ edges in total graph.
