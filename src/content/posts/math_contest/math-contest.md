@@ -3,7 +3,7 @@ author: Chunbo Liu
 title: Math Contest Retake
 description: This is the first time I retake up my math contest career, I really want to say my experiences here.
 pubDatetime: 2026-07-12T12:39:11.152Z
-modDatetime: 2026-08-19T15:26:49.625Z
+modDatetime: 2026-08-19T15:46:27.888Z
 tags:
   - math contest
   - experiences
@@ -1575,7 +1575,10 @@ $$
 
 这次最需要改进的并不是增加更多偏题技巧，而是让已经找到的正确方法完整落地。第 10 题说明主体能力已经足够；接下来要做的是通过固定的末步检查，把“几乎做对”变成真正得分。
 
-# 2026-08-19 全国高中数学联合竞赛模拟试题（1）复盘
+# 0819
+
+> [!NOTE] AI 分析
+> 全国高中数学联合竞赛模拟试题（1）复盘。以下内容由 AI 根据原题、参考答案和手写作答逐题核验。
 
 ## 总体诊断
 
