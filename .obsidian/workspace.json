@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "How to avoid being mind-controlled?"
             }
+          },
+          {
+            "id": "979e9412a30b0843",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "src/content/posts/launchings/building-foliage.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "building-foliage"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,8 +112,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "3e7ebc4d2b2fe180",
@@ -202,10 +215,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "35f89ed1435449e2",
+  "active": "979e9412a30b0843",
   "lastOpenFiles": [
-    "src/content/posts/math_contest/math-contest.md",
+    "src/content/posts/_drafts/Myself, a new mind and changing.md",
+    "src/content/posts/launchings/building-foliage.md",
     "src/content/posts/_drafts/How to avoid being mind-controlled?.md",
+    "src/content/posts/_drafts/Cayley's Theorem on Graph Theory.md",
+    "src/content/posts/math_contest/math-contest.md",
     "dist/tags/number-theory 2",
     "dist/tags/eandm 2",
     "dist/posts/learning-logs 3",
@@ -226,7 +242,6 @@
     "dist/posts/math_contest/math-contest/index.png",
     "dist/posts/math_contest/introductory-combinatorics/index.png",
     "dist/posts/math_contest/integral-point-to-area/index.png",
-    "src/content/posts/_drafts/Cayley's Theorem on Graph Theory.md",
     "src/content/posts/_drafts/Some views on permutation.md",
     "src/content/posts/some-views-on-permutation.md",
     "src/content/posts/about-perfect-matching.md",

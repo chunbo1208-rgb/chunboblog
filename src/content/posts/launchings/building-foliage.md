@@ -1,9 +1,9 @@
 ---
 author: Chunbo Liu
 title: "Building Foliage: A Reading and Note-Taking App in SwiftUI"
-description: "Introducing Foliage, a SwiftUI app that keeps documents, annotations, reading progress, and notes in one personal library."
+description: Introducing Foliage, a SwiftUI app that keeps documents, annotations, reading progress, and notes in one personal library.
 pubDatetime: 2026-08-25T03:59:54.000Z
-modDatetime: 2026-08-25T03:59:54.000Z
+modDatetime: 2026-08-25T04:55:41.342Z
 draft: false
 publishStatus: published
 tags:
@@ -22,6 +22,8 @@ Most reading apps are good at displaying a file, while note-taking apps are
 good at storing thoughts. Moving between them makes it easy to lose the
 connection between a passage and the idea it produced. Foliage keeps that
 context inside one personal library.
+
+Relevant link: [Github Repo](https://github.com/chunbo1208-rgb/Foliage)
 
 ## What Foliage Can Do Today
 
